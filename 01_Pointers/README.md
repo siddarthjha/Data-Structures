@@ -8,5 +8,5 @@ int *a; // Pointer declaration in C language
 p = &a; // Address of 'a' variable
 printf("%d", *p) // Derefrencing. It will give the value of address location saved in 'p'
 ```
-In similar way you have pointers of different data types.
+In similar way you can have pointers of different data types.
 
