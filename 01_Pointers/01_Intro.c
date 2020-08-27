@@ -18,6 +18,12 @@ int main()
 	printf("\nThe value of address at **p1 %d", **p1);
 	**p1 = 5;
 	printf("\nModified value of a from **p1 %d", a);
-
+	
+	// Arithmetic Operations with Pointers
+	printf("\nThe size of pointer %d",sizeof(p));
+	printf("\nThe value of p+1 is %d bytes", p+1);
+	printf("\nThe value of *(p+1) is %d", *(p+1));
+	printf("\nThe value of **(p+1) is %d", **(p1+1));
+	
 	return 0;
 }
