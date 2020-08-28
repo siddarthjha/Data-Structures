@@ -13,5 +13,9 @@ In similar way you can have pointers of different data types.
 * [Introduction](01_Intro.c)<br>
 We don't have pointer concept in java rather we have refrences.
 * [Java Refrences]()
+### Pointer Types
 * [Pointer types](02_Types.c)
+### Pointers as Function argument
+* [Pointers argument](03_Argument.c)
+
 
