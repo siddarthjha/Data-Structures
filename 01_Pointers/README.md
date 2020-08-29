@@ -17,5 +17,7 @@ We don't have pointer concept in java rather we have refrences.
 * [Pointer types](02_Types.c)
 ### Pointers as Function argument
 * [Pointers argument](03_Argument.c)
+### Pointers and Arrays
+* [Pointers with arrays](04_Array.c)
 
 
