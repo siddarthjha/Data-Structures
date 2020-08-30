@@ -22,6 +22,8 @@ We don't have pointer concept in java rather we have refrences.
 ### Dynamic Memory Allocation
 * [Heap implementation](05_Allocation.c)
 ### Pointer return type Function
-* [](06_.c)
+* [Pointer function](06_Pointerfunc.c)
+### 
+* [](07_.c)
 
 
