@@ -9,7 +9,7 @@ void main()
 	scanf("%d %d", &x, &y);
 	z = square;
 	int v;
-	v = (*z)(x, y);
+	v = (*z)(x, y); // z(x,y);
 	printf("value = %d", v);
 	
 	
