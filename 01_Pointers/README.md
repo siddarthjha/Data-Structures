@@ -23,7 +23,7 @@ We don't have pointer concept in java rather we have refrences.
 * [Heap implementation](05_Allocation.c)
 ### Pointer return type Function
 * [Pointer function](06_Pointerfunc.c)
-### 
-* [](07_.c)
+### Function Pointer
+* [Function Pointers](07_.c)
 
 
