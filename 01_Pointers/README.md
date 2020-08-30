@@ -11,7 +11,7 @@ printf("%d", *p) // Derefrencing. It will give the value of address location sav
 
 In similar way you can have pointers of different data types.
 * [Introduction](01_Intro.c)<br>
-We don't have pointer concept in java rather we have refrences.
+**We don't have pointer concept in java rather we have refrences.**
 * [Java Refrences]()
 ### Pointer Types
 * [Pointer types](02_Types.c)
