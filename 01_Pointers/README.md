@@ -24,6 +24,6 @@ We don't have pointer concept in java rather we have refrences.
 ### Pointer return type Function
 * [Pointer function](06_Pointerfunc.c)
 ### Function Pointer
-* [Function Pointers](07_.c)
+* [Function Pointers](07_FuncPointer.c)
 
 
