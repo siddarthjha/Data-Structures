@@ -1,4 +1,5 @@
 # LinkedList
 
 ### Single linked list
-* [Linked list in C](01_Single.c)
+* [Linked list in C](LinkedList.c)
+* [Linled List in Java](Linkedlist.java)
