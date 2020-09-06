@@ -50,7 +50,7 @@ printf("\n----------------------------------------------\n");
 void push ()  
 {  
     int val;      
-    if (top == n)   
+    if (top == n-1)   
     printf("\n Overflow");   
     else   
     {  
