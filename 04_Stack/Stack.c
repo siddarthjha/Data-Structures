@@ -10,7 +10,7 @@ void main ()
     scanf("%d",&n);  
     printf("*********Stack operations using array*********");  
   
-printf("\n----------------------------------------------\n");  
+
     while(choice != 4)  
     {  
         printf("Chose one from the below options...\n");  
