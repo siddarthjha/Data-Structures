@@ -6,7 +6,20 @@
 ### Double Linked List
 * [Double Linked List](Linkedlist1.java)
 
-**In Circular Linked list instead of placing null in the last node "next", we will point it to the head which is the first value.**
+**In Circular Linked list instead of placing null in the last node of "next", we will point it to the head which is the first value.**
 
 In this way the circular linked list is implemented.
-There will be minor changes in all the functions of normal linked list. 
+There will be minor changes in all the functions of normal linked list.
+```
+void insert()
+{
+  Node n = new Node(data);
+  n.next = null;
+if(head == null)
+{
+  head = n;
+  n.next = null;
+}
+}
+```
+There will be minute changes as above.
