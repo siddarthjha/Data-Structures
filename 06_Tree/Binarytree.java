@@ -13,6 +13,7 @@ class Node
 class BST
 {
 	Node root;
+	static boolean flag = false;
 	
 	public BST()
 	{
@@ -134,21 +135,31 @@ class BST
 		}
 	}
 	
-	public Node search(Node root, int data)
+	public void search(Node node, int data)
 	{
-		if(root == null || root.data == data)
+		if(root == null)
 		{
-			return root;
+			System.out.println("Tree is Empty");
+			return;
 		}
-		if(root.data > data)
+		else
 		{
-			return search(root.left, data);
+			if(node.data == data)
+			{
+				flag = true;
+				return;
+			}	
+			
+			if(flag == false && node.left != null)
+			{
+				search(node.left, data);
+			}
+			if(flag == false && node.right != null)
+			{
+				search(node.right, data);
+			}
 		}
-		else if(root.data < data)
-		{
-			return search(root.right, data);
-		}
-		return root;
+		
 	}
 	
 	public static void main(String args[])
@@ -166,5 +177,18 @@ class BST
 		del = obj.delete(obj.root, 40);
 		System.out.println("Data after deleting 40");
 		obj.inorder(obj.root);
+		obj.search(obj.root, 10);
+		System.out.println("Searching 10 in tree..");
+		if(flag)
+			System.out.println("Element Found");
+		else
+			System.out.println("Not Found");
+		obj.search(obj.root, 30);
+		System.out.println("Searching 30 in tree..");
+		if(flag)
+			System.out.println("Element Found");
+		else
+			System.out.println("Not Found");
+		
 	}
 } 
