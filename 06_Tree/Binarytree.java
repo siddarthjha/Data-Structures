@@ -60,6 +60,25 @@ class BST
 	} 
 	
 	
+	void preorder(Node node)
+	{
+		if(root == null)
+		{
+			System.out.println("Empty tree");
+			return;
+		}
+		else
+		{
+			if(node != null)
+			{
+				System.out.print(node.data+ " ");
+				preorder(node.left);
+				preorder(node.right);
+			}
+		}
+		//System.out.println();
+	}
+	
 	
 	void inorder(Node node)
 	{
@@ -73,10 +92,31 @@ class BST
 			if(node != null)
 			{
 				inorder(node.left);
-				System.out.println(node.data);
+				System.out.print(node.data+ " ");
 				inorder(node.right);
 			}
 		}
+		//System.out.println();
+	}
+	
+	
+	void postorder(Node node)
+	{
+		if(root == null)
+		{
+			System.out.println("Empty tree");
+			return;
+		}
+		else
+		{
+			if(node != null)
+			{
+				postorder(node.left);
+				postorder(node.right);
+				System.out.print(node.data+ " ");
+			}
+		}
+		//System.out.println();
 	}
 	
 	public Node delete(Node node, int data)
@@ -172,7 +212,15 @@ class BST
 		obj.insert(70);
 		obj.insert(60);
 		obj.insert(80);
+		System.out.println("In-order traversal");
 		obj.inorder(obj.root);
+		System.out.println();
+		System.out.println("Pre-order traversal");
+		obj.preorder(obj.root);
+		System.out.println();
+		System.out.println("Post-order traversal");
+		obj.postorder(obj.root);
+		System.out.println();
 		Node del = null;
 		del = obj.delete(obj.root, 40);
 		System.out.println("Data after deleting 40");
@@ -189,6 +237,8 @@ class BST
 			System.out.println("Element Found");
 		else
 			System.out.println("Not Found");
+		System.out.println("Pre-order traversal");
+		obj.preorder(obj.root);
 		
 	}
 } 
