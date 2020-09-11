@@ -3,6 +3,8 @@
 * [Binary Search Tree in Java](Binarytree.java)
   * Insert
   * Delete
-  * Inorder Traversal
+  * In-Order Traversal
   * Search
+  * Pre-Order Traversal
+  * Post-Order Traversal
 * [Binary Search Tree in C](BST.c)
