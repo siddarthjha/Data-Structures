@@ -25,7 +25,7 @@ class Solution
         tmp += matrix[i + 1][j + 1]; 
         
         if(maxHourglass < tmp)
-		    {
+		{
             maxHourglass = tmp;
         }
     }
@@ -35,19 +35,19 @@ class Solution
         // read inputs
         Scanner scan = new Scanner(System.in); 
         for(int i=0; i < _MAX; i++)
-		    {
+		{
             for(int j=0; j < _MAX; j++)
-			     {
+			{
                 matrix[i][j] = scan.nextInt();
-           }
+			}
         }
         scan.close();
         
         // find maximum hourglass
         for(int i=0; i < _MAX - _OFFSET; i++)
-	    	{
+	    {
             for(int j=0; j < _MAX - _OFFSET; j++)
-		      	{
+		    {
                 hourglass(i, j);
             }
         }
