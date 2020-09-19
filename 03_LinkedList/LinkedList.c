@@ -47,7 +47,19 @@ void insert(int value)
 	ptr = (struct abc*)malloc(sizeof(struct abc));
 	ptr->data = value;
 	ptr->next = head;
-	head = ptr;
+	if(head == null)
+	{
+		head = ptr;
+	}
+	else
+	{
+		struct abc node = head;
+		while(node!=null)
+		{
+			node = node.next;
+		}
+		node = ptr;
+	}
 }
 
 void print()
