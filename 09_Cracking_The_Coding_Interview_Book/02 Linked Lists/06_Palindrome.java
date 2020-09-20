@@ -3,8 +3,8 @@ int size;// The size of the linked list tkaen while inserting elements
 public boolean palindrome()
 {
     node curr = head;
-    int mid = (size%2 == 0)? (size/2):((size + 1)/2);
-    for(int i = 0; i < mid; i++)
+    int mid = (size % 2 == 0)? (size/2):((size + 1)/2);
+    for(int i = 1; i < mid; i++)
     {
         curr = curr.next;
     }
