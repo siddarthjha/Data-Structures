@@ -23,7 +23,7 @@ class Graph
 	  void addEdge(int src, int dest) 
 	  {
 	    	adjLists[src].add(dest); // Directed Graph
-			adjLists[dest].add(src); // Undirected Graph
+		//adjLists[dest].add(src); // Undirected Graph
 	  }
 	  void BFS(int vertex)
 	  {
