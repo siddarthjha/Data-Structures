@@ -21,15 +21,17 @@ public class RobotGrid
 	static int n = 3; //substitute your n value here
     static ArrayList<Point> current_path = new ArrayList<Point>();
     static boolean[][] blockedCell = new boolean[n][n];
-    public static void FindAllWay(int x, int y)
+    public static void FindAllWay(int x, int y) // BackTracking Method
     {
         if (x <0 || y < 0) return;
         Point p = new Point(x, y);
         current_path.add(p);
 
-        if (0 == x && 0 == y){
+        if (0 == x && 0 == y)
+		{
             System.out.println(current_path.toString());
-            current_path.remove(current_path.size() -1);
+           	current_path.remove(current_path.size() - 1);
+			//System.out.println(current_path.toString());
             return;
         }
 
@@ -51,6 +53,7 @@ public class RobotGrid
 
     public static void main(String[] args)
     {
-        FindAllWay(n-1,n-1);
+        FindAllWay(n-1, n-1);
+		
     }
 }
