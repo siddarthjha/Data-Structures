@@ -1,35 +1,56 @@
 import java.util.Scanner;
-class RobotGrid
-{
-	public static void main(String [] args)
-	{
-		Scanner sc = new Scanner(System.in);
-		RobotGrid obj = new RobotGrid();
-		int m, n;
-		System.out.println("Enter number of rows");
-		m = sc.nextInt();
-		System.out.println("Enter number of columns");
-		n = sc.nextInt();
-		System.out.println(obj.uniquepath(m, n));
-	}
-	
-	public int uniquepath(int m, int n)
-	{
-		return dfs(0, 0, m, n);
-	}
-	
-	public int dfs(int i, int j, int m, int n)
-	{
-		if(i == m-1 && j == n-1)
-			return 1;
-		if(i < m - 1 && j < n - 1)
-			return dfs(i + 1, j, m, n) + dfs(i, j + 1, m, n);
-		if(i < m - 1)
-			return dfs(i + 1, j, m, n);
-		if(j < n -1)
-			return dfs(i, j + 1, m, n);
-		
-		return 0;
-	}
+import java.util.ArrayList;
 
+class Point 
+{
+    int x, y;
+    public Point (int x, int y) 
+	{
+        this.x = x;
+        this.y = y;
+	}
+	
+	public String toString() 
+	{
+        return String.format("[%d, %d]", x, y);
+    }
+}
+
+public class RobotGrid
+{
+	static int n = 3; //substitute your n value here
+    static ArrayList<Point> current_path = new ArrayList<Point>();
+    static boolean[][] blockedCell = new boolean[n][n];
+    public static void FindAllWay(int x, int y)
+    {
+        if (x <0 || y < 0) return;
+        Point p = new Point(x, y);
+        current_path.add(p);
+
+        if (0 == x && 0 == y){
+            System.out.println(current_path.toString());
+            current_path.remove(current_path.size() -1);
+            return;
+        }
+
+        if ((x > 0) && !blockedCell[x-1][y]) //go right
+        {
+            blockedCell[x-1][y] = true;
+            FindAllWay(x-1, y);
+            blockedCell[x-1][y] = false;
+        }
+        if ((y > 0) &&!blockedCell[x][y-1]) // go down
+        {
+            blockedCell[x][y-1] = true;
+            FindAllWay(x, y-1);
+            blockedCell[x][y-1] = false;
+        }
+        current_path.remove(current_path.size()-1);
+
+    }
+
+    public static void main(String[] args)
+    {
+        FindAllWay(n-1,n-1);
+    }
 }
