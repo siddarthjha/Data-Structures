@@ -6,6 +6,7 @@
 * [Stack](04_Stack/README.md)
 * [Queue](05_Queue/README.md)
 * [Trees](06_Tree/README.md)
+* [Cracking The Coding Interview Book Exercies](Cracking The Coding Interview)
 
 ## How to Contribute
 
