@@ -1,1 +1,1 @@
-# Solutions of Exercies in Java
+# Solutions of Exercies are in Java
