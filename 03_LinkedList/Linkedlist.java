@@ -1,24 +1,24 @@
 import java.util.Scanner;
+import static java.lang.System.*;
 
 class Node
 {
 	int data;
 	Node next;
-		
+	Node(int val)
+	{
+		data = val;
+		next = null;
+	}	
 }
 
 class A
 {
 	Node head;
-	
-	
 	//Insert
 	void insert(int value)
 	{
-		Node obj = new Node();
-		obj.data = value;
-		obj.next = null;
-		
+		Node obj = new Node(value);
 		if(head == null)
 		{
 			head = obj;
@@ -44,13 +44,16 @@ class A
 		{
 			Node n = head;
 			System.out.println();
+			int c = 0;
 			while(n!=null)
 			{
 				System.out.print(n.data + ", ");
+				c++;
 				n = n.next;
 			}
 			System.out.print(".");
 			System.out.println();
+			System.out.println("Number of elements are: " + c);
 		}
 	}
 	// Search
@@ -87,35 +90,35 @@ class A
 	{
 		if(head == null)
 		{
-			Node obj = new Node();
-			obj.data = value;
-			obj.next = null;
+			Node obj = new Node(value);
 			head = obj;
 		}
 		else
 		{
 			
-			Node obj = new Node();
-			//temp = head;
-			obj.data = value;
+			Node obj = new Node(value);
 			obj.next = head;
 			head = obj;
 		}
 		System.out.println("Value inserted");
 	}
-	// Insert at Given Index
+	
 	void insertAt(int ind, int value)
 	{
+		
 		if(ind == 0)
 		{
 			insertStart(value);
 		}
 		else
 		{
+			if(head == null)
+			{
+				out.println("Wrong Input Please check");
+				return;
+			}
 			Node n = head;
-			Node obj = new Node();
-			obj.data = value;
-			obj.next = null;
+			Node obj = new Node(value);
 			for(int i = 0; i < ind -1; i++)
 			{
 				n = n.next;
@@ -125,17 +128,79 @@ class A
 			System.out.println("Value Inserted");
 		}
 	}
-	// Delete the Given value
-	void delete(int value)
+	// Delete
+	void del(int ind) 
+	{
+		
+		if(head == null)
+		{
+			out.println("Empty list");
+			return;
+		}
+		Node n = head;
+		if(n.data == ind)
+		{
+			head = n.next;
+			System.out.println("Deleted");
+			return;
+		}
+		while(n.next != null)
+		{
+			if(n.next.data == ind)
+			{
+				if(n.next.next == null)
+				{
+					n.next = null;
+					System.out.println("Deleted value");
+					return;
+				}
+				Node temp = n.next.next;
+				n.next = temp;
+				System.out.println("Value Deleted");
+				return;
+			}
+			n = n.next;
+		}
+	}
+	
+	//K-th to last print
+	public void kth(int ind)
 	{
 		Node n = head;
-		while(n!=null)
+		for(int i = 0; i < ind; i++)
 		{
-			if(n.data == value)
+			if(n == null)
 			{
-				
+				out.println("bye");
+				break;
 			}
+			n = n.next;
 		}
+		while(n!= null)
+		{
+			System.out.print(n.data + ", ");
+			n = n.next;
+		}
+		out.println();
+	}
+	
+	public void reverse()
+	{
+		Node current = head;
+		Node prev = null, next = null;
+		if(current == null)
+		{
+			out.println("Empty List");
+			return;
+		}
+		while(current != null)
+		{
+			next = current.next;
+			current.next = prev;
+			prev = current;
+			current = next;
+		}
+		head = prev;
 	}
 	
 }
@@ -149,7 +214,7 @@ public class Linkedlist
 		
 		while(true)
 		{
-			System.out.println("Select Option\n1. Insert\n2. Print List\n3. Search\n4. Insert At Start\n5. Insert at given Index\n6. Exit");
+			System.out.println("Select Option\n1. Insert\n2. Print List\n3. Search\n4. Insert At Start\n5. Insert at given Index\n6. Delete\n7. K-th to last print\n8. Reverse Linked List\n9. Exit");
 		 	int n = obj.nextInt();
 			if(n == 1)
 			{
@@ -186,6 +251,23 @@ public class Linkedlist
 				System.out.println("Enter value");
 				value = obj.nextInt();
 				obj1.insertAt(ind, value);
+			}
+			else if(n == 6)
+			{
+				out.println("Enter the index to delete");
+				int ind = obj.nextInt();
+				obj1.del(ind);
+			}
+			else if(n == 7)
+			{
+				out.println("Enter k-th index ");
+				int ind = obj.nextInt();
+				obj1.kth(ind);
+			}
+			else if(n == 8)
+			{
+				obj1.reverse();
+				System.out.println("Reversed");
 			}
 			else
 			{
