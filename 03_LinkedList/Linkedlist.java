@@ -9,7 +9,8 @@ class Node
 	{
 		data = val;
 		next = null;
-	}	
+	}
+		
 }
 
 class A
@@ -202,6 +203,51 @@ class A
 		}
 		head = prev;
 	}
+	public void loop()
+	{
+		Node fast = head, slow = head;
+		int c = 0;
+		while(fast != null && slow != null && fast.next != null)
+		{
+			slow = slow.next;
+			fast = fast.next.next;
+			if(slow == fast)
+			{
+				out.println("Loop Detected");
+				c++;
+				break;
+			}
+		}
+		if(c == 1)
+		{
+			out.println("No loop detected");
+		}
+		
+	}
+	
+	public void duplicate()
+	{
+		Node p1 = null, p2 = null, dup = null;
+		p1 = head;
+		while(p1 != null && p1.next != null)
+		{
+			p2 = p1;
+			while(p2.next != null)
+			{
+				if(p1.data == p2.next.data)
+				{
+					dup = p2.next;
+					p2.next = p2.next.next;
+				}
+				else
+				{
+					p2 = p2.next;
+				}
+			}
+			p1 = p1.next;
+		}
+		System.out.println("Done Checking");
+	}
 	
 }
 
@@ -268,6 +314,14 @@ public class Linkedlist
 			{
 				obj1.reverse();
 				System.out.println("Reversed");
+			}
+			else if(n == 9)
+			{
+				obj1.loop();
+			}
+			else if(n == 10)
+			{
+				obj1.duplicate();
 			}
 			else
 			{
