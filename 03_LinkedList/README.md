@@ -23,3 +23,17 @@ if(head == null)
 }
 ```
 There will be minute changes as above.
+
+The linkedlist.java consists of functions:
+1. Insertion
+2. Print 
+3. Search
+4. Insertion At Start
+5. Insertion At given Index
+6. Deletion
+7. Print from K-last
+8. Reverse
+9. Find Loop
+10. Remove Duplicate
+
+All these are implemented (Most of them are in optimized run-time)
